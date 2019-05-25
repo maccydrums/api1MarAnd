@@ -1,20 +1,55 @@
 <template>
   <div class="hello">
     <h2>Students</h2>
-    <ul v-for="user in users"
+    <!-- <ul v-for="user in users"
     :key="user.student.name"
     >
       <li>{{ user.student.name }}</li>
-    </ul>
+    </ul> -->
+    <v-table :data="users">
+    <thead slot="head">
+        <th>Namn</th>
+        <th>Email</th>
+        <th>Address</th>
+    </thead>
+    <tbody slot="body" slot-scope="{displayData}">
+        <tr v-for="row in displayData" :key="row.id">
+          <td>
+            <b-list-group-item button>
+              {{row.student.name}}
+            </b-list-group-item>
+          </td>
+          <td>
+            <b-list-group-item button>
+              {{row.student.email}}
+            </b-list-group-item>
+          </td>
+          <td>
+            <b-list-group-item button>
+              {{row.student.address.gata}}, 
+              {{row.student.address.postnummer}},
+              {{row.student.address.ort}}
+            </b-list-group-item>
+          </td>
+          <td>
+             <b-button id="knapp" variant="outline-success">Delete</b-button>
+          </td>
+        </tr>
+    </tbody>
+  </v-table>
   </div>
 </template>
 
 <script>
 export default {
-  data: function(){
-      return {
-        users: []
-      }
+  data: () => {
+    return {
+      users: [],
+      items: [
+        { name: 40, email: 'Dickerson', address: 'Macdonald' },
+        { name: 40, email: 'Dickerson', address: 'Macdonald' }
+      ]
+    }
   },
   methods: {
     fetchData: function () {
@@ -37,8 +72,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 900px;
+  background-color: transparent;
+}
+#knapp {
+  height: 50px;
+  width: 80px;
+}
+h2 {
+  margin-top: 20px;
 }
 ul {
   list-style-type: none;

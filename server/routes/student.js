@@ -3,7 +3,7 @@ dotify = require('node-dotify');
 get = (req, res, next) => {
     var query;
     if (req.query.username) {
-        query = req.models.Student.findOne({ username: req.query.username })
+        query = req.models.Student.findOne({ name: req.query.name })
     }
     else {
         query = req.models.Student.find()

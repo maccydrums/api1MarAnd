@@ -25,6 +25,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #app img {
   width: 13%;
