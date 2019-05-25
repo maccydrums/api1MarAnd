@@ -27,6 +27,6 @@ export default {
   margin-top: 20px;
 }
 #app img {
-  width: 18%;
+  width: 13%;
 }
 </style>
