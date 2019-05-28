@@ -1,9 +1,10 @@
 dotify = require('node-dotify');
 
 get = (req, res, next) => {
+    console.log(req.query.name)
     var query;
-    if (req.query.username) {
-        query = req.models.Student.findOne({ name: req.query.name })
+    if (req.query.name) {
+        query = req.models.Student.findOne({ "student.name": req.query.name })
     }
     else {
         query = req.models.Student.find()
@@ -20,9 +21,9 @@ post = (req, res, next) => {
             email: req.body.student.email,
             name: req.body.student.name,
             address: {
-                gata: req.body.address.gata,
-                postnummer: req.body.address.postnummer,
-                ort: req.body.address.ort
+                gata: req.body.student.address.gata,
+                postnummer: req.body.student.address.postnummer,
+                ort: req.body.student.address.ort
             }
         }
     }).then((student) => {
@@ -67,7 +68,7 @@ put = (req, res, next) => {
             console.log("status: ", status)
             if (status.upserted)
                 res.status(201)
-            else if (MediaStreamTrackAudioSourceNode.nModified)
+            else if (status.nModified)
                 res.status(200)
             else
                 res.status(204)
