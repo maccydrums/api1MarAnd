@@ -59,7 +59,8 @@ put = (req, res, next) => {
                     ort: req.body.address.ort
                 }
             },
-        }, {
+        }, 
+        {
             new: true,
             upsert: true,
             runvalidators: true,
@@ -96,5 +97,4 @@ module.exports = {
     deleteById,
     put,
     patch
-
 }

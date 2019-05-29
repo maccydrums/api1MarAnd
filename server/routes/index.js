@@ -8,9 +8,6 @@ router.use(function timelog (req, res, next) {
   next();
 })
 
-// router.post('/middlewares', body.body)
-
-
 router.get('/students', student.get);
 router.post('/students', student.post);
 router.get("/students/:id", student.getById)

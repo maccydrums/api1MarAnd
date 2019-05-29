@@ -1,6 +1,20 @@
 # api1MarAnd:
 ## Marcus Andersson
 
+*Instructions
+```
+Go inside server folder and run:
+npm install 
+->
+npm run dev
+```
+```
+Go inside show-api folder and run:
+npm install 
+->
+npm run serve
+```
+
 * GET
 ```
 curl localhost:3000/students | jq
@@ -18,7 +32,19 @@ curl -X GET "localhost:3000/students?name=Charlie+Carham" | jq
 
 * POST
 ```
-curl -X POST "localhost:3000/students" -H "accept: application/json" -H "Content-Type: application/json" -d '{"student":{"email":"carham@hotmail.com", "name":"Charlie Carham", "address":{"gata":"Framtidsvägen 7A", "postnummer":"352 22", "ort":"Växjö"}}}' | jq
+curl -X POST "localhost:3000/students" -H "accept: application/json" -H "Content-Type: application/json" -d '{
+    "student": {
+      "address": {
+        "gata": "Storgatan 11B",
+        "postnummer": "341 40",
+        "ort": "Göteborg"
+      },
+      "email": "becca.karlsson@live.com",
+      "name": "Rebecca Karlsson"
+    },
+    "_id": "5ce91a496534cc4e1345ffbc",
+    "__v": 0
+  }' | jq
 ```
 
 * PATCH

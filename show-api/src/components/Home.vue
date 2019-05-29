@@ -8,22 +8,22 @@
         <th>Address</th>
       </thead>
       <tbody slot="body" slot-scope="{displayData}">
-        <tr v-for="row in displayData" :key="row.id">
+        <tr v-for="(data, index) in displayData" :key="index">
           <td>
-            <b-list-group-item>{{row.student.name}}</b-list-group-item>
+            <b-list-group-item>{{data.student.name}}</b-list-group-item>
           </td>
           <td>
-            <b-list-group-item>{{row.student.email}}</b-list-group-item>
+            <b-list-group-item>{{data.student.email}}</b-list-group-item>
           </td>
           <td>
             <b-list-group-item>
-              {{row.student.address.gata}},
-              {{row.student.address.postnummer}},
-              {{row.student.address.ort}}
+              {{data.student.address.gata}},
+              {{data.student.address.postnummer}},
+              {{data.student.address.ort}}
             </b-list-group-item>
           </td>
           <td>
-            <b-button @click="onDelete" value="1" id="knapp" variant="outline-danger">Delete</b-button>
+            <b-button v-on:click="onDelete(data)" type="button" id="knapp" variant="outline-danger">Delete</b-button>
           </td>
         </tr>
       </tbody>
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 export default {
   data: () => {
     return {
@@ -74,7 +75,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      // evt.preventDefault();
+      // event.preventDefault();
       const newUser = {
         student: {
           email: this.form.email,
@@ -96,18 +97,15 @@ export default {
           console.log(error);
         });
     },
-    onDelete(evt) {
-      evt.preventDefault();
-      // fetch('http://localhost:3000/students', {
-      //   method: 'DELETE',
-      //   headers: { 'content-type': 'application/json' },
-      //   body: JSON.stringify(newUser)
-      //  })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
-      this.$emit('on-Delete', console.log(this.value))
-      // console.log(this.$refs.working.value);
+    onDelete(data) {
+      fetch('http://localhost:3000/students/' + data._id, {
+        method: 'DELETE',
+        headers: { 'content-type': 'application/json' },
+       })
+        .catch((error) => {
+          console.log(error);
+        });
+        console.log(data.student.name, 'got deleted')
     },
     fetchData: function() {
       const myRequest = new Request("http://localhost:3000/students");
@@ -124,7 +122,6 @@ export default {
         });
     }
   },
-
   mounted() {
     this.fetchData();
   }
