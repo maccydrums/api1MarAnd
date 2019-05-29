@@ -51,15 +51,15 @@ curl -X POST "localhost:3000/students" -H "accept: application/json" -H "Content
 ```
 curl -X PATCH "localhost:3000/students/5ce923a558184a53e0983652" -H "accept: application/json" -H "Content-Type: application/json" -d '{
     "student": {
-    "email":"kalle@mail.com",
-    "name": "Kalle Karlsson",
-    "address": {
-      "gata": "Kalle 10",
-      "postnummer":"kalle 33",
-      "ort":"kalle"
+      "email":"kalle@mail.com",
+      "name": "Kalle Karlsson",
+      "address": {
+        "gata": "Kalle 10",
+        "postnummer":"kalle 33",
+        "ort":"kalle"
+        }
       }
-    }
-  }' -i
+    }' -i
 ```
 
 * DELETE
@@ -69,15 +69,15 @@ curl -X DELETE "localhost:3000/students/5ce923a558184a53e0983652" -H "accept: ap
 
 * PUT
 ```
- curl -X PUT "localhost:3000/students/5ce923a558184a53e0983652" -H "accept: application/json" -H "Content-Type: application/json" -d '
- { "student": {
-   "email":"carham@mail.com",
-   "name": "Cara Carham",
-   "address": {
-     "gata": "Carstreet 10",
-     "postnummer":"353 33",
-     "ort":"Cartown"
-     }
-    }
-  }' -i
+ curl -X PUT "localhost:3000/students/5ce923a558184a53e0983652" -H "accept: application/json" -H "Content-Type: application/json" -d '{
+   "student": {
+    "email":"carham@mail.com",
+    "name": "Cara Carham",
+    "address": {
+      "gata": "Carstreet 10",
+      "postnummer":"353 33",
+      "ort":"Cartown"
+      }
+      }
+    }' -i
 ```
