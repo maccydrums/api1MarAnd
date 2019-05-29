@@ -105,7 +105,8 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-        console.log(data.student.name, 'got deleted')
+        // console.log(data.student.name, 'got deleted')
+        // $vm.forceUpdate();
     },
     fetchData: function() {
       const myRequest = new Request("http://localhost:3000/students");
@@ -128,7 +129,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
   display: flex;
