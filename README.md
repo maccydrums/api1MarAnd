@@ -10,7 +10,7 @@ npm install
 npm run dev
 ```
 ```
-Go inside show-api folder and run:
+Go inside vue-app folder and run:
 
 npm install 
 ->
