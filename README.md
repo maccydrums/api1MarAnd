@@ -15,6 +15,7 @@ npm install
 ->
 npm run serve
 ```
+---
 
 * GET
 ```
@@ -80,7 +81,7 @@ curl -X DELETE "localhost:3000/students/5ce923a558184a53e0983652" -H "accept: ap
       }
     }' -i
 ```
-
+---
 ## Teoretisk del:
 * Hur används HTTP-protokollet när du surfar in på en websida? Beskriv vilken metod, path, URI, response code och body som skickas in och svarar. Om du har svårt att bestämma dig för en url, ta ex. http://www.smp.se/kultur-noje/
 
