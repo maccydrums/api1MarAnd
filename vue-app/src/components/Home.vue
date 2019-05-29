@@ -110,7 +110,6 @@ export default {
     },
     fetchData: function() {
       const myRequest = new Request("http://localhost:3000/students");
-
       fetch(myRequest)
         .then(response => {
           return response.json();
@@ -126,7 +125,7 @@ export default {
   mounted() {
     this.fetchData();
   }
-};
+}
 </script>
 
 <style scoped>
