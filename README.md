@@ -1,7 +1,6 @@
-# api1MarAnd:
-## Marcus Andersson
+# Marcus Andersson - inlämningsuppgfit 1
 
-* Instructions
+## Instructions
 ```
 Go inside server folder and run:
 
