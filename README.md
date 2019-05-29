@@ -1,15 +1,17 @@
 # api1MarAnd:
 ## Marcus Andersson
 
-*Instructions
+* Instructions
 ```
-Go inside server folder and run:
+## Go inside server folder and run:
+
 npm install 
 ->
 npm run dev
 ```
 ```
-Go inside show-api folder and run:
+## Go inside show-api folder and run:
+
 npm install 
 ->
 npm run serve
