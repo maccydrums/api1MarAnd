@@ -85,12 +85,12 @@ curl -X DELETE "localhost:3000/students/5ce923a558184a53e0983652" -i
 ```
 ---
 ## Teoretisk del:
-* Hur används HTTP-protokollet när du surfar in på en websida? Beskriv vilken metod, path, URI, response code och body som skickas in och svarar. Om du har svårt att bestämma dig för en url, ta ex. http://www.smp.se/kultur-noje/
+* Hur används HTTP-protokollet när du surfar in på en websida? Beskriv vilken metod, path, URI, response code och body som skickas in och svarar. Om du har svårt att bestämma dig för en url, ta ex. http://www.smp.se/kultur-noje/ **
 ```
 När jag går in på http://www.smp.se/kultur-noje/ så skickar klienten en GET-metod (HTTP-förfrågan). -> Servern tar emot förfrågan och skickar sedan tillbaka HTML (response code) till klienten. Pathen är /kultur-noje/
 ```
 
-** Beskriv HTTP-protokollets vanligaste metoder och vad de gör.
+** Beskriv HTTP-protokollets vanligaste metoder och vad de gör. **
 ```
 GET: Förfrågan till servern där man pekar på en fil/url.
 POST: Skapar ett nytt objekt.
@@ -99,7 +99,7 @@ DELETE: Raderar objektet.
 PATCH: Uppdaterar hela ELLER en viss del av ett objekt
 ```
 
-** "http://localhost:3000/users?username=something" är en URI, beskriv vilka delar den består av och vad de kallas.
+** "http://localhost:3000/users?username=something" är en URI, beskriv vilka delar den består av och vad de kallas. **
 ```
 Schema: "http"
 Authority: "localhost:3000"
@@ -107,7 +107,7 @@ Path: "/users"
 Query = "?username=something"
 ```
 
-** På vilka tre sätt kan man skicka in parametrar i en HTTP-request? Ge exempel med curl.
+** På vilka tre sätt kan man skicka in parametrar i en HTTP-request? Ge exempel med curl. **
 ```
 Med query:
 curl -X GET "localhost:3000/students?name=Charlie+Carham" | jq
