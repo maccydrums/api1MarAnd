@@ -1,7 +1,6 @@
 dotify = require('node-dotify');
 
 get = (req, res, next) => {
-    console.log(req.query.name)
     var query;
     if (req.query.name) {
         query = req.models.Student.findOne({ "student.name": req.query.name })
@@ -54,9 +53,9 @@ put = (req, res, next) => {
                 email: req.body.student.email,
                 name: req.body.student.name,
                 address: {
-                    gata: req.body.address.gata,
-                    postnummer: req.body.address.postnummer,
-                    ort: req.body.address.ort
+                    gata: req.body.student.address.gata,
+                    postnummer: req.body.student.address.postnummer,
+                    ort: req.body.student.address.ort
                 }
             },
         }, 

@@ -97,16 +97,18 @@ export default {
           console.log(error);
         });
     },
-    onDelete(data) {
-      fetch('http://localhost:3000/students/' + data._id, {
+    async onDelete(data) {
+      try {
+        fetch('http://localhost:3000/students/' + data._id, {
         method: 'DELETE',
         headers: { 'content-type': 'application/json' },
+       }).then (() => {
+         this.fetchData();
        })
-        .catch((error) => {
+       } 
+       catch(error) {
           console.log(error);
-        });
-        // console.log(data.student.name, 'got deleted')
-        // $vm.forceUpdate();
+        };
     },
     fetchData: function() {
       const myRequest = new Request("http://localhost:3000/students");
