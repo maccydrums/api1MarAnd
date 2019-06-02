@@ -2,7 +2,6 @@ const express = require('express');
 const student = require('./student.js');
 const router = express.Router();
 
-//middleware that is spec to this router
 router.use(function timelog (req, res, next) {
   console.log('Time:', Date.now())
   next();
