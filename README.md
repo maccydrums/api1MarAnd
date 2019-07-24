@@ -1,5 +1,7 @@
 # Marcus Andersson - inlämningsuppgfit 1
-Ska ha min praktik på Meetod i höst och dem kör Vue, så jag valde att börja kolla på det förra veckan. Det slutade med att jag gjorde GUI i Vue! Blev inget fancy, so bare with me :-)
+
+![Thumbnail](thumbnail.png)
+
 
 ## Instructions
 
