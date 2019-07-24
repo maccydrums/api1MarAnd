@@ -35,33 +35,31 @@ curl -X GET "localhost:3000/students?name=Charlie+Carham" | jq
 ```
 
 * POST
+
+curl -X POST "localhost:3000/listings" -H "accept: application/json" -H "Content-Type: application/json" -d '{
+    "listing": {"kommun": "Växjö", "gata":"Framtidsvägen 71", "bostadstyp":"Villa", "pris":"152500kr", "månadskostnad":"4500kr", "budning":"true", "kordinater":{"lat":"123123123", "long":"12321312"}}}' | jq
+
 ```
-curl -X POST "localhost:3000/students" -H "accept: application/json" -H "Content-Type: application/json" -d '{
-    "student": {
-      "email": "becca.karlsson@live.com",
-      "name": "Rebecca Karlsson",
-      "address": {
-        "gata": "Storgatan 11B",
-        "postnummer": "341 40",
-        "ort": "Göteborg"
+curl -X POST "localhost:3000/listings" -H "accept: application/json" -H "Content-Type: application/json" -d '{
+    "listing": {
+            "location": "Växjö",
+            "street": "Framtidsvägen 7A",
+            "type": "Bostadsrätt",
+            "price": "650000kr",
+            "monthlyFee": "3000kr",
+            "bidding": true,
+            "coordinate": {
+                "lat": 34234924,
+                "long": 2324234
+            }
         }
-      }
     }' | jq
 ```
 
 * PATCH
 ```
-curl -X PATCH "localhost:3000/students/5cee5fa894a20c8468237593" -H "accept: application/json" -H "Content-Type: application/json" -d '{
-    "student": {
-      "email":"calle@live.com",
-      "name": "Calle Karlsson",
-      "address": {
-        "gata": "Högstorp 35A",
-        "postnummer":"555 33",
-        "ort":"Växjö"
-        }
-      }
-    }' -i
+curl -X PATCH "localhost:3000/listings/5d00c121695cd2ff4547dfb5" -H "accept: application/json" -H "Content-Type: application/json" -d '{
+    "listing": {"kommun": "Ljungby", "gata":"Klotvägen 71", "bostadstyp":"Villa", "pris":"152500kr", "månadskostnad":"4500kr", "budning":"true", "kordinater":{"lat":"555555", "long":"555555"}}}'  -i
 ```
 
 * DELETE
